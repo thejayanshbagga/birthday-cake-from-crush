@@ -85,7 +85,15 @@ const TYPED_LINES = [
   "> you're everything i want, today and forever",
   "...",
   "٩(◕‿◕)۶ ٩(◕‿◕)६ ٩(◕‿◕)۶"
-];const MUSIC_START_SECONDS = 18;const TYPED_CHAR_DELAY = 100;
+];
+
+const MUSIC_DROP_SECONDS = 18;
+const MUSIC_START_OFFSET_SECONDS = 5;
+const MUSIC_START_SECONDS = Math.max(
+  0,
+  MUSIC_DROP_SECONDS - MUSIC_START_OFFSET_SECONDS
+);
+const TYPED_CHAR_DELAY = 100;
 const POST_TYPING_SCENE_DELAY = 1000;
 const CURSOR_BLINK_INTERVAL = 480;
 
