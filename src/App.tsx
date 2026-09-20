@@ -85,8 +85,7 @@ const TYPED_LINES = [
   "> you're everything i want, today and forever",
   "...",
   "٩(◕‿◕)۶ ٩(◕‿◕)६ ٩(◕‿◕)۶"
-];
-const TYPED_CHAR_DELAY = 100;
+];const MUSIC_START_SECONDS = 18;const TYPED_CHAR_DELAY = 100;
 const POST_TYPING_SCENE_DELAY = 1000;
 const CURSOR_BLINK_INTERVAL = 480;
 
@@ -97,14 +96,7 @@ type BirthdayCardConfig = {
   rotation: [number, number, number];
 };
 
-const BIRTHDAY_CARDS: ReadonlyArray<BirthdayCardConfig> = [
-  {
-    id: "confetti",
-    image: "/card.png",
-    position: [1, 0.081, -2],
-    rotation: [-Math.PI / 2 , 0, Math.PI / 3],
-  }
-];
+const BIRTHDAY_CARDS: ReadonlyArray<BirthdayCardConfig> = [];
 
 function AnimatedScene({
   isPlaying,
@@ -400,7 +392,9 @@ export default function App() {
     if (!audio.paused) {
       return;
     }
-    audio.currentTime = 0;
+    if (audio.currentTime < MUSIC_START_SECONDS || audio.ended) {
+      audio.currentTime = MUSIC_START_SECONDS;
+    }
     void audio.play().catch(() => {
       // ignore play errors (browser might block)
     });
