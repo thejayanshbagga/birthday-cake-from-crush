@@ -20,7 +20,9 @@ html, body {
   height: 100vh;
   overflow: hidden;
   position: relative;
-  background: #0b0212;
+  background:
+    radial-gradient(circle at top, rgba(255,255,255,0.96) 0%, rgba(255,243,248,0.9) 18%, rgba(255, 214, 230, 0.7) 44%, rgba(255, 182, 214, 0.8) 100%),
+    linear-gradient(180deg, #fffafc 0%, #ffe4f0 35%, #ffd1e7 100%);
 }
 
 canvas {
@@ -41,8 +43,8 @@ canvas {
   display: flex;
   align-items: flex-start;
   padding-top: 2rem;
-  color: #ffffff;
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  color: #ff5fa2;
+  text-shadow: 0 0 18px rgba(255,255,255,0.8), 0 4px 18px rgba(255, 122, 182, 0.45);
 }
 
 .typed-text {
@@ -54,6 +56,8 @@ canvas {
   display: inline-flex;
   flex-direction: column;
   gap: 0.35rem;
+  color: #ff4d94;
+  text-shadow: 0 0 10px rgba(255,255,255,0.8), 0 0 22px rgba(255, 123, 175, 0.45);
 }
 
 .typed-cursor {
@@ -74,6 +78,7 @@ canvas {
   letter-spacing: 0.28em;
   text-transform: uppercase;
   opacity: 0.65;
+  color: #ff7baf;
 }
 
 .hint-overlay {
@@ -84,7 +89,7 @@ canvas {
   font-family: "Courier New", Courier, monospace;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: rgba(255, 242, 228, 0.9);
+  color: rgba(255, 94, 155, 0.9);
   opacity: 0.85;
   pointer-events: none;
   z-index: 3;
