@@ -17,6 +17,7 @@ import { Table } from "./models/table";
 import { PictureFrame } from "./models/pictureFrame";
 import { Fireworks } from "./components/Fireworks";
 import { BirthdayCard } from "./components/BirthdayCard";
+import backgroundMusicUrl from "/music.mp3";
 
 import "./App.css";
 
@@ -381,7 +382,7 @@ export default function App() {
   const backgroundAudioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    const audio = new Audio("/music.mp3");
+    const audio = new Audio(backgroundMusicUrl);
     audio.loop = true;
     audio.preload = "auto";
     backgroundAudioRef.current = audio;
